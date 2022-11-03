@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" placeholder="Camiseta de Boca" [(ngModel)]="product.name">
+      </div>
+      <div class="mb-3">
+        <label for="waist" class="form-label">Talle</label>
+        <input type="text" class="form-control" id="waist" placeholder="XL" [(ngModel)]="product.waist">
+      </div>
+      <div class="mb-3">
+        <label for="brand">Marca</label>
+        <select class="form-control" id="brand" required [(ngModel)]="product.brand">
+          <option *ngFor="let brand of brands" [value]="brand.brand_id">{{brand.marca}}</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addProduct()">Agregar</button>
+  </div>
