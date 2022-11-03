@@ -14,7 +14,7 @@
   <tbody>
     <ng-container *ngFor="let product of products">
       <tr [ngClass]="{'clearance': product.clearance}">
-       <!-- <td><img src="{{product.image}}" alt="{{product.name}}"></td> -->
+       <td><img src="{{product.image}}" alt="{{product.name}}"></td>
         <td>{{product.name}}</td>
         <td>{{product.type}}</td>
         <td>{{product.waist}}</td>
