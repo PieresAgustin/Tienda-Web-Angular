@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Brand } from '../brand';
+import { BrandDataService } from '../brand-data.service';
+import { ProductCartService } from '../product-cart.service';
 import { ProductsDataService } from '../products-data.service';
-import { Product } from './product';
+import { Product } from '../product';
 
 @Component({
   selector: 'product-list',
@@ -10,8 +13,8 @@ import { Product } from './product';
 export class ProductListComponent implements OnInit {
 
   products : Product[] = []
-
-  constructor(private productsDataService: ProductsDataService) { }
+  brands: Brand[] = []
+  constructor(private productsDataService: ProductsDataService, private productCartService: ProductCartService, private brandDataService: BrandDataService) { }
 
   ngOnInit(): void {
     this.productsDataService.getAll().subscribe(products => this.products = products)
@@ -20,6 +23,7 @@ export class ProductListComponent implements OnInit {
   upQuantity(product: Product): void{
     if(product.stock > product.quantity){
       product.quantity++;
+      this.productCartService.addToCart(product);
     }
   }
   downQuantity(product: Product): void{
@@ -37,4 +41,10 @@ export class ProductListComponent implements OnInit {
       product.quantity = 0;
     }
   }
+  deleteProduct(id: number) {
+    const confirm = window.confirm('Borrar Producto?');
+    if (!confirm) return;
+    this.productsDataService.deleteProduct(id).subscribe();
+  }
+
 }
