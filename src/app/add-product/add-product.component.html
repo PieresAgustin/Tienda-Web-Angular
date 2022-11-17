@@ -1,17 +1,42 @@
-<div class="container-fluid">
-    <div class="mb-3">
-        <label for="name" class="form-label">Nombre</label>
+<div class="container-fluid" >
+  <h3>Crear Nuevo Producto</h3>
+    <div class="mb-4">
+        <label for="name" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Nombre ---</label>
         <input type="text" class="form-control" id="name" placeholder="Camiseta de Boca" [(ngModel)]="product.name">
       </div>
-      <div class="mb-3">
-        <label for="waist" class="form-label">Talle</label>
+      <div class="mb-4">
+        <label for="waist" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Talle ---</label>
         <input type="text" class="form-control" id="waist" placeholder="XL" [(ngModel)]="product.waist">
       </div>
-      <div class="mb-3">
-        <label for="brand">Marca</label>
+      <div class="mb-4">
+        <label for="type" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Tipo ---</label>
+        <input type="text" class="form-control" id="type" placeholder="Camiseta" [(ngModel)]="product.type">
+      </div>
+      <div class="mb-4">
+        <label for="Color" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Color ---</label>
+        <input type="text" class="form-control" id="color" placeholder="Blanco" [(ngModel)]="product.color">
+      </div>
+      <div class="mb-4">
+        <label for="stock" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Stock ---</label>
+        <input type="text" class="form-control" id="stock" placeholder="100" [(ngModel)]="product.stock">
+      </div>
+      <div class="mb-4">
+        <label for="price" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Precio ---</label>
+        <input type="text" class="form-control" id="price" placeholder="1000" [(ngModel)]="product.price">
+      </div>
+      <div class="mb-4">
+        <label for="brand" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Marca ---</label>
         <select class="form-control" id="brand" required [(ngModel)]="product.brand">
           <option *ngFor="let brand of brands" [value]="brand.brand_id">{{brand.marca}}</option>
         </select>
       </div>
-      <button type="button" class="btn btn-primary" (click)="addProduct()">Agregar</button>
+      <div class="mb-4">
+        <label for="image" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Imagen ---</label>
+        <input type="text" class="form-control" id="image" placeholder="assets/..." [(ngModel)]="product.image">
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="clearance" [(ngModel)]="product.clearance">
+        <label class="form-check-label bg-primary rounded-2" for="clearance" style="float: left; color: white">--- Oferta ---</label>
+      </div>
+      <button href="/products" type="button" class="btn btn-primary" (click)="addProduct()">Agregar Producto</button>
   </div>
