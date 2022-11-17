@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from './product-list/product';
+import { Product } from './product';
 
-const URL = "http://localhost:3000/products";
+const URL = "https://tienda-web.onrender.com/products";
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +22,10 @@ export class ProductsDataService {
   }
 
   createProduct(product: any):Observable<Product> {
-    //console.log(product);
     return this.http.post<any>(URL,product,this.httpOptions);
+  }
+
+  deleteProduct(id:number):Observable<any> {
+    return this.http.delete<number>(`${URL}/${id}`);
   }
 }
