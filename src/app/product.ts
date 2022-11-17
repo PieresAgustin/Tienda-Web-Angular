@@ -1,4 +1,7 @@
+import { Brand } from "./brand";
+
 export interface Product {
+    id: number;
     name: string;
     type: string;
     waist: string;
@@ -8,4 +11,5 @@ export interface Product {
     image: string;
     quantity: number;
     clearance: boolean;
+    brand: Brand;
 }
