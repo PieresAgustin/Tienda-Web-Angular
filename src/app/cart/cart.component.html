@@ -3,23 +3,21 @@
         <tr>
             <th scope="col">Producto</th>
             <th scope="col">Cantidad</th>
-            <th scope="col">Monto</th>
+            <th scope="col">Precio por unidad</th>
         </tr>
     </thead>
     <tbody>
         <ng-container *ngFor="let product of products">
             <tr>
-                <td><img src="{{product.image}}" alt="{{product.name}}"></td>
+                <td>{{product.name}}</td>
                 <td>{{product.quantity}}</td>
                 <td>{{product.price | currency:'ARS'}}</td>
             </tr>
         </ng-container>
-        <!-- <tr>
-            <td>botines</td>
-            <td>2</td>
-            <td>35000</td>
-        </tr> -->
     </tbody>
 </table>
-<p class="text-bg-info p-3">Total: {{total | currency:'ARS'}}</p>
-<button type="button" class="btn btn-primary">Comprar</button>
+<p class="text-bg-info p-3">Total: {{total() | currency:'ARS'}}</p>
+<div>
+    <button type="button" class="btn btn-primary">Comprar</button>
+    <button type="button" class="btn btn-warning" (click)="emptyCart()">Vaciar Carrito</button>
+</div>
