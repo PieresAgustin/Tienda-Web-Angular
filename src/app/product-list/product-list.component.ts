@@ -44,11 +44,7 @@ export class ProductListComponent implements OnInit {
   deleteProduct(id: number) {
     const confirm = window.confirm('Borrar Producto?');
     if (!confirm) return;
-    this.productsDataService.deleteProduct(id).subscribe({
-      next: () =>
-        (this.products = this.products.filter((product) => product.id !== id)),
-      error: (e) => console.error(e),
-    });
+    this.productsDataService.deleteProduct(id).subscribe();
   }
 
 }
