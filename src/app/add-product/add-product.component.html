@@ -32,11 +32,19 @@
       </div>
       <div class="mb-4">
         <label for="image" class="form-label bg-primary rounded-2" style="float: left; color: white">--- Imagen ---</label>
-        <input type="text" class="form-control" id="image" placeholder="assets/..." [(ngModel)]="product.image">
+        <select class="form-select" id="image" placeholder="assets/..." [(ngModel)]="product.image">
+          <option>assets/botines-adidas.png</option>
+          <option>assets/botines-nike.png</option>
+          <option>assets/camiseta-boca.png</option>
+          <option>assets/camiseta-river.png</option>
+          <option>assets/camiseta-independiente.png</option>
+          <option>assets/guantes-adidas.png</option>
+          <option>assets/guantes-nike.png</option>
+        </select>
       </div>
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="clearance" [(ngModel)]="product.clearance">
         <label class="form-check-label bg-primary rounded-2" for="clearance" style="float: left; color: white">--- Oferta ---</label>
       </div>
-      <button href="/products" type="button" class="btn btn-primary" (click)="addProduct()">Agregar Producto</button>
+      <button href="/products" style="color: white" type="button" class="btn btn-primary" (click)="addProduct()">Agregar</button>
   </div>

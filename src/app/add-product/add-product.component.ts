@@ -4,7 +4,6 @@ import { BrandDataService } from '../brand-data.service';
 import { ProductsDataService } from '../products-data.service';
 import { Product } from '../product';
 
-
 @Component({
   selector: 'add-product',
   templateUrl: './add-product.component.html',
@@ -33,8 +32,7 @@ export class AddProductComponent implements OnInit {
   constructor(private productsDataService: ProductsDataService, private brandsDataService: BrandDataService) { }
 
   ngOnInit(): void {
-    this.brandsDataService.getAll().subscribe(brands => this.brands = brands)
-
+    this.brandsDataService.getAll().subscribe(brands => this.brands = brands);
   }
 
   addProduct():void{
