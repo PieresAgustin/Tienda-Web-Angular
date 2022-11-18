@@ -1,7 +1,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">ID</th>
       <th scope="col">Imagen</th>
       <th scope="col">Nombre</th>
       <th scope="col">Marca</th>
@@ -15,7 +14,6 @@
   <tbody>
     <ng-container *ngFor="let product of products">
       <tr [ngClass]="{'clearance': product.clearance}">
-        <td>{{product.id}}</td>
         <td><img src="{{product.image}}" alt="{{product.name}}"></td>
         <td>{{product.name}}</td>
         <td>{{product.brand.marca}}</td>
@@ -33,7 +31,7 @@
           </div>
         </td>
         <td>
-          <button type="button" class="btn btn-danger" (click)="deleteProduct(product.id)">
+          <button href="/products" type="button" class="btn btn-danger" (click)="deleteProduct(product.id)">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash"
               viewBox="0 0 16 16">
               <path
@@ -49,5 +47,3 @@
     </ng-container>
   </tbody>
 </table>
-
-<!-- <button type="button" class="btn btn-danger text-white rounded-2" style="float: left" (click)="deleteProduct(product.id)">BORRAR</button> -->
