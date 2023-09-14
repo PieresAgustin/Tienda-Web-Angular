@@ -1,0 +1,39 @@
+version: '3'
+services:
+  
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+     - ./src:/app/src
+    ports:
+      - 4200:4200
+  
+  back:
+    image: pagustin/agus-nestjs
+    ports:
+      - 3000:3000
+    working_dir: '/opt/tienda'  
+
+  database:
+    image: 'postgres:latest'
+    restart: always
+    volumes:
+      - 'postgres_data:/var/lib/postgresql/data'
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - '5432:5432'
+
+  # adminer:
+  #   image: adminer:latest
+  #   ports:
+  #     - 8080:8080
+
+volumes:
+  postgres_data:
