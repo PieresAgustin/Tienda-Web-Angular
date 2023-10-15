@@ -10,7 +10,7 @@ import { Product } from '../product';
 export class CartComponent implements OnInit {
 
 
-  products:Product[] = []
+  products: Product[] = []
 
   constructor(private productCartService: ProductCartService) { }
 
@@ -18,17 +18,17 @@ export class CartComponent implements OnInit {
     this.productCartService.products.subscribe(data => this.products = data);
   }
 
-  emptyCart(){
+  emptyCart() {
     this.productCartService.emptyCart();
   }
 
-  total(){
+  total() {
     let sum = 0;
-    this.products.forEach(product =>{
+    this.products.forEach(product => {
       sum += product.quantity * product.price
     });
     return sum;
   }
-    
+
 
 }

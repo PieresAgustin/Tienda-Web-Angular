@@ -13,7 +13,7 @@ export class BrandDataService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Brand[]>{
+  getAll(): Observable<Brand[]> {
     return this.http.get<Brand[]>(URL);
   }
 }

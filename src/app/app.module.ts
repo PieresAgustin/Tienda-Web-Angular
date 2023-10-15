@@ -29,7 +29,7 @@ import { AddProductComponent } from './add-product/add-product.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

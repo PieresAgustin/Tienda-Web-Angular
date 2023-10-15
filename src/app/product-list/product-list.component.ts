@@ -12,7 +12,7 @@ import { Product } from '../product';
 })
 export class ProductListComponent implements OnInit {
 
-  products : Product[] = []
+  products: Product[] = []
   brands: Brand[] = []
   constructor(private productsDataService: ProductsDataService, private productCartService: ProductCartService, private brandDataService: BrandDataService) { }
 
@@ -20,24 +20,24 @@ export class ProductListComponent implements OnInit {
     this.productsDataService.getAll().subscribe(products => this.products = products)
   }
 
-  upQuantity(product: Product): void{
-    if(product.stock > product.quantity){
+  upQuantity(product: Product): void {
+    if (product.stock > product.quantity) {
       product.quantity++;
       this.productCartService.addToCart(product);
     }
   }
-  downQuantity(product: Product): void{
-    if(product.quantity > 0){
+  downQuantity(product: Product): void {
+    if (product.quantity > 0) {
       product.quantity--;
-    }  
+    }
   }
-  verifyProductsQuantity(product: Product): void{
-    if(product.stock < product.quantity){
+  verifyProductsQuantity(product: Product): void {
+    if (product.stock < product.quantity) {
       alert("No se pueden ordenar más productos de los que hay en stock");
     }
 
-    if(product.quantity < 0 ){
-      alert("No se pueden pedir menos que 0 productos");
+    if (product.quantity < 0) {
+      alert('No se pueden pedir menos que 0 productos');
       product.quantity = 0;
     }
   }

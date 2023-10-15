@@ -43,7 +43,7 @@ describe('AddProductComponent', () => {
       }
     })
   });
-  
+
   it('Should check that the mock of brands is a empty array',()=> {
     const fixture = TestBed.createComponent(AddProductComponent);
     const addprod = fixture.componentInstance;

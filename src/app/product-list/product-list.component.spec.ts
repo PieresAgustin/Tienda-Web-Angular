@@ -6,7 +6,7 @@ import { Product } from '../product';
 describe('ProductListComponent', () => {
   let component: ProductListComponent;
   let fixture: ComponentFixture<ProductListComponent>;
-  let product:Product = {
+  let product: Product = {
     id: 0,
     name: "",
     type: "",
@@ -20,15 +20,15 @@ describe('ProductListComponent', () => {
     brand: {
       brand_id: 0,
       marca: "",
-    }
+    },
   };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ],
+      declarations: [ProductListComponent],
       imports: [HttpClientTestingModule],
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ProductListComponent);
     component = fixture.componentInstance;
@@ -41,8 +41,8 @@ describe('ProductListComponent', () => {
 
   it('This should call upQuantity function 5 times', () => {
     spyOn(component, 'upQuantity');
-    
-    for(let i = 0; i < 5; i++){
+
+    for (let i = 0; i < 5; i++) {
       component.upQuantity(product);
     }
 

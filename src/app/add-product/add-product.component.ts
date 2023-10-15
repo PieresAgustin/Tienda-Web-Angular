@@ -11,14 +11,14 @@ import { Product } from '../product';
 })
 export class AddProductComponent implements OnInit {
 
-  brands:Brand[] = [];
+  brands: Brand[] = [];
 
-  product:Product = {
+  product: Product = {
     id: 0,
     name: "",
     type: "",
     waist: "",
-    color: "",
+    color: '',
     stock: 0,
     price: 0,
     image: "",
@@ -26,7 +26,7 @@ export class AddProductComponent implements OnInit {
     clearance: false,
     brand: {
       brand_id: 0,
-      marca: "",
+      marca: '',
     }
   }
   constructor(private productsDataService: ProductsDataService, private brandsDataService: BrandDataService) { }
@@ -35,8 +35,10 @@ export class AddProductComponent implements OnInit {
     this.brandsDataService.getAll().subscribe(brands => this.brands = brands);
   }
 
-  addProduct():void{
-    this.productsDataService.createProduct(this.product).subscribe(product => {
+  addProduct(): void {
+    this.productsDataService
+    .createProduct(this.product)
+    .subscribe(product => {
       this.product.name = product.name
       this.product.color = product.color
       this.product.price = product.price
