@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/d91055ebd83345629824ba9856a7e730)](https://app.codacy.com/gh/PieresAgustin/Tienda-Web-Angular/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 Deployment de la app de Angular: https://solosports-tecweb.netlify.app/#/products
 
