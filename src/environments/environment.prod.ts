@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiURL: '',
+  production: true,
+  apiURL: 'https://tienda-web-gc9d.onrender.com',
 };
