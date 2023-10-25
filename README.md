@@ -5,7 +5,7 @@ Deployment de la app de Angular: https://solosports-tecweb.netlify.app/#/product
 
 Deployment de la app de NestJS: https://tienda-web-gc9d.onrender.com
 
-# PruebaAngular
+# Tienda-Web
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
