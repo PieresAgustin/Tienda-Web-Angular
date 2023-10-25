@@ -9,6 +9,10 @@ services:
      - ./src:/app/src
     ports:
       - 4200:4200
+    env_file:
+      - .env
+    environment:
+      - API_URL=
   
   back:
     image: pagustin/agus-nestjs
@@ -24,9 +28,10 @@ services:
     env_file:
       - .env
     environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_USER=agustin
+      - POSTGRES_HOST=database
+      - POSTGRES_DB=Tienda
+      - POSTGRES_PASSWORD=12345
     ports:
       - '5432:5432'
 
