@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'https://tienda-web-gc9d.onrender.com/',
+  apiURL: 'http://localhost:3000' //process.env['API_URL'],
 };
