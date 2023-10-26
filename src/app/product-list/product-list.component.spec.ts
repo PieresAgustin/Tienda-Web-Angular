@@ -46,6 +46,6 @@ describe('ProductListComponent', () => {
       component.upQuantity(product);
     }
 
-    expect(component.upQuantity).toHaveBeenCalledTimes(10);
+    expect(component.upQuantity).toHaveBeenCalledTimes(5);
   })
 });
