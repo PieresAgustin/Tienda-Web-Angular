@@ -1,19 +1,11 @@
 version: '3'
 services:
-  
+
   front:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-     - ./src:/app/src
+    image: pagustin/agus-angular
     ports:
       - 4200:4200
-    env_file:
-      - .env
-    environment:
-      - API_URL=
-  
+
   back:
     image: pagustin/agus-nestjs
     ports:
@@ -25,8 +17,6 @@ services:
     restart: always
     volumes:
       - 'postgres_data:/var/lib/postgresql/data'
-    env_file:
-      - .env
     environment:
       - POSTGRES_USER=agustin
       - POSTGRES_HOST=database
