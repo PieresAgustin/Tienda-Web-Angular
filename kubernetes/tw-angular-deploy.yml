@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: angular-deploy
+   labels:
+      app: angular
+spec:
+   replicas: 1
+   selector:
+      matchLabels:
+         app: angular
+   template:
+      metadata:
+         labels:
+            app: angular
+      spec:
+         containers:
+          - name: angular
+            image: pagustin/agus-angular:k8s
+            imagePullPolicy: "Always"
+            ports:
+            - containerPort: 4200
+

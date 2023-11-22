@@ -49,6 +49,27 @@
               ],
               "outputHashing": "all"
             },
+            "k8s": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.prod.ts",
+                  "with": "src/environments/environment.k8s.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -68,6 +89,9 @@
             },
             "development": {
               "browserTarget": "tienda-web:build:development"
+            },
+            "k8s": {
+              "browserTarget": "tienda-web:build:k8s"
             }
           },
           "defaultConfiguration": "development"
