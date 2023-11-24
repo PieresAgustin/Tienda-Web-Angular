@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="https://angular.io/" target="blank"><img src="https://angular.io/assets/images/logos/angular/angular.png" width="160" alt="FCEx Logo" /></a>
+  <a href="https://exa.unicen.edu.ar/" target="blank"><img src="https://git.exa.unicen.edu.ar/uploads/-/system/appearance/logo/1/color_transparente_750.png" width="500" alt="FCEx Logo" /></a>
+</p>
+
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/d91055ebd83345629824ba9856a7e730)](https://app.codacy.com/gh/PieresAgustin/Tienda-Web-Angular/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![codecov](https://codecov.io/gh/PieresAgustin/Tienda-Web-Angular/graph/badge.svg?token=WDJ9VUS8AQ)](https://codecov.io/gh/PieresAgustin/Tienda-Web-Angular)
 
@@ -12,6 +17,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## K8S Deploy
+Use `ng serve --configuration k8s` or `npm run start:k8s` to use the k8s environment.
 
 ## Code scaffolding
 
